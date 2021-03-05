@@ -5,7 +5,6 @@ namespace App\Models;
 use App\Models\Scopes\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-
 class EquipmentItem extends Model
 {
     use HasFactory;
@@ -39,7 +38,7 @@ class EquipmentItem extends Model
         return $this->hasMany(Borrowed::class);
     }
 
-    public function search($search)
+    public static function search($search)
     {
         return empty($search) ? static::query()
             : static::query()->where('id', 'like', '%' . $search . '%')

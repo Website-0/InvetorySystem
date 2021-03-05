@@ -4,9 +4,17 @@ namespace App\Http\Livewire;
 
 use App\Models\EquipmentItem;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Equipment extends Component
 {
+    use WithPagination;
+    public $search = '';
+    public $orderBy = 'controlnumber';
+    public $orderAsc = true;
+    public $isOpen = 0;
+    public $prooducts, $name, $price, $brand, $categorie, $product_id, $stock;
+
     public function render()
     {
         return view('livewire.equipment', [
