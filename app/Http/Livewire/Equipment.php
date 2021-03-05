@@ -13,12 +13,12 @@ class Equipment extends Component
     public $orderBy = 'controlnumber';
     public $orderAsc = true;
     public $isOpen = 0;
-    public $prooducts, $name, $price, $brand, $categorie, $product_id, $stock;
+    public $controlnumber, $category, $brand, $model, $location, $purchaseprice, $yearofpurchase, $retiredate, $remarks, $accesories;
 
     public function render()
     {
         return view('livewire.equipment', [
-            'equipment' => EquipmentItem::search($this->search)
+            'equipments' => EquipmentItem::search($this->search)
                 ->orderBy($this->orderBy, $this->orderAsc ? 'asc' : 'desc')
                 ->paginate(15),
         ]);

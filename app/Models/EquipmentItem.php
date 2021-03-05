@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Scopes\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 class EquipmentItem extends Model
 {
     use HasFactory;
@@ -53,6 +54,6 @@ class EquipmentItem extends Model
             ->orWhere('remarks', 'like', '%' . $search . '%')
             ->orWhere('accesories', 'like', '%' . $search . '%')
             ->orWhere('yearofpurchase', 'like', '%' . $search . '%')
-            ->orWhere('retiredate', 'like', '%' . $search . '%')
+            ->orWhere('retiredate', 'like', '%' . $search . '%');
     }
 }

@@ -57,26 +57,32 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- @if (count($products) > 0)
-                            @foreach ($products as $product)
+                        @if (count($equipments) > 0)
+                            @foreach ($equipments as $equipment)
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
-                                    <td>{{$product->name}}</td>
-                                    <td>{{$product->price}}</td>
-                                    <td>{{$product->stock}}</td>
-                                    <td>{{$product->categorie}}</td>
-                                    <td>{{$product->brand}}</td>
+                                    <td>{{$equipment->image}}</td>
+                                    <td>{{$equipment->controlnumber}}</td>
+                                    <td>{{$equipment->categoryname}}</td>
+                                    <td>{{$equipment->brand}}</td>
+                                    <td>{{$equipment->model}}</td>
+                                    <td>{{$equipment->location}}</td>
+                                    <td>{{$equipment->purchaseprice}}</td>
+                                    <td>{{$equipment->yearofpurchase}}</td>
+                                    <td>{{$equipment->retiredate}}</td>
+                                    <td>{{$equipment->remarks}}</td>
+                                    <td>{{$equipment->accesories}}</td>
                                     <td classs=" px-4 py-2 w-full">
                                         <a href="#" class="btn btn-success border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"><i class="fas fa-edit"></i></a>
-                                        <button wire:click="delete({{ $product->id }})" class="btn btn-danger border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"><i class="fas fa-trash-alt"></i></button>
+                                        <button wire:click="delete({{ $equipment->id }})" class="btn btn-danger border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"><i class="fas fa-trash-alt"></i></button>
                                     </td>
                                 </tr>
                             @endforeach
                         @else
                             <tr>
-                                <th colspan="7" class="text-center bg-danger text-white"> No Result </th>
+                                <th colspan="13" class="text-center bg-danger text-white"> No Result </th>
                             </tr>
-                        @endif --}}
+                        @endif
 
                     </tbody>
                 </table>
