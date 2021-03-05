@@ -41,12 +41,19 @@
                     <thead class="bg-light">
                         <tr>
                             <th scope="col" class="border-0">#</th>
-                            <th scope="col" class="border-0">Name of Product</th>
-                            <th scope="col" class="border-0">Price</th>
-                            <th scope="col" class="border-0">Stock</th>
-                            <th scope="col" class="border-0">Categorie</th>
+                            <th scope="col" class="border-0">Image</th>
+                            <th scope="col" class="border-0">Control Number</th>
+                            <th scope="col" class="border-0">Category</th>
                             <th scope="col" class="border-0">Brand</th>
-                            <th scope="col" class="border-0">Option</th>
+                            <th scope="col" class="border-0">Model</th>
+                            <th scope="col" class="border-0">Location</th>
+                            <th scope="col" class="border-0">Purchase Price</th>
+                            <th scope="col" class="border-0">Year of Purchase</th>
+                            <th scope="col" class="border-0">Retire Date</th>
+                            <th scope="col" class="border-0">Remarks</th>
+                            <th scope="col" class="border-0">Accesories</th>
+                            <th scope="col" class="border-0">Action</th>
+
                         </tr>
                     </thead>
                     <tbody>
