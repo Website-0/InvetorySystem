@@ -15,10 +15,7 @@
                         <select wire:model="orderBy"
                             class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm block mt-1 w-full">
                             <option value="id">ID</option>
-                            <option value="name">Name</option>
-                            <option value="price">Price</option>
-                            <option value="categorie">Categorie</option>
-                            <option value="brand">Brand</option>
+                            <option value="controlnumber">Control Number</option>
                         </select>
                     </div>
                     <div class="col-md-2">
