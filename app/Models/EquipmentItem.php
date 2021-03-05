@@ -38,4 +38,22 @@ class EquipmentItem extends Model
     {
         return $this->hasMany(Borrowed::class);
     }
+
+    public function search($search)
+    {
+        return empty($search) ? static::query()
+            : static::query()->where('id', 'like', '%' . $search . '%')
+            ->orWhere('controlnumber', 'like', '%' . $search . '%')
+            ->orWhere('categoryname', 'like', '%' . $search . '%')
+            ->orWhere('brand', 'like', '%' . $search . '%')
+            ->orWhere('model', 'like', '%' . $search . '%')
+            ->orWhere('location', 'like', '%' . $search . '%')
+            ->orWhere('purchaseprice', 'like', '%' . $search . '%')
+            ->orWhere('yearofpurchase', 'like', '%' . $search . '%')
+            ->orWhere('retiredate', 'like', '%' . $search . '%')
+            ->orWhere('remarks', 'like', '%' . $search . '%')
+            ->orWhere('accesories', 'like', '%' . $search . '%')
+            ->orWhere('yearofpurchase', 'like', '%' . $search . '%')
+            ->orWhere('retiredate', 'like', '%' . $search . '%')
+    }
 }
