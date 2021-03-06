@@ -58,7 +58,9 @@
                             @foreach ($equipments as $equipment)
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
-                                    <td>{{$equipment->image}}</td>
+                                    <td>
+                                        <img src="storage/{{$equipment->image}}" width="100" height="100">
+                                    </td>
                                     <td>{{$equipment->controlnumber}}</td>
                                     <td>{{$equipment->categoryname}}</td>
                                     <td>{{$equipment->brand}}</td>

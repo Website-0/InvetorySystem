@@ -72,6 +72,7 @@ class Equipment extends Component
             'photo' => 'image|max:1024',
         ]);
 
+
         EquipmentItem::updateOrCreate(['id' => $this->equiment_id], [
             'controlnumber' => $this->controlnumber,
             'categoryname' => $this->category,
@@ -82,7 +83,8 @@ class Equipment extends Component
             'yearofpurchase' => $this->yearofpurchase,
             'remarks' => $this->remarks,
             'accesories' => $this->accesories,
-            'image' => $this->photo->store('photos'),
+            'image' => $this->photo->store('photos', 'public'),
+
         ]);
 
         session()->flash(
