@@ -5,15 +5,18 @@ namespace App\Http\Livewire;
 use App\Models\EquipmentItem;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Livewire\WithFileUploads;
 
 class Equipment extends Component
 {
     use WithPagination;
+    use WithFileUploads;
+
     public $search = '';
     public $orderBy = 'controlnumber';
     public $orderAsc = true;
     public $isOpen = 0;
-    public $controlnumber, $category, $brand, $model, $location, $purchaseprice, $yearofpurchase, $retiredate, $remarks, $accesories;
+    public $controlnumber, $category, $photo, $brand, $model, $location, $purchaseprice, $yearofpurchase, $retiredate, $remarks, $accesories, $equiment_id;
 
     public function render()
     {
@@ -35,7 +38,7 @@ class Equipment extends Component
         $this->isOpen = true;
     }
 
-    public function closeModel()
+    public function closeModal()
     {
         $this->isOpen = false;
     }
@@ -49,9 +52,9 @@ class Equipment extends Component
         $this->location = '';
         $this->purchaseprice = '';
         $this->yearofpurchase = '';
-        $this->retiredate = '';
         $this->remarks = '';
         $this->accesories = '';
+        $this->photo = '';
     }
 
     public function store()
@@ -65,12 +68,13 @@ class Equipment extends Component
             'purchaseprice' => 'required',
             'yearofpurchase' => 'required',
             'remarks' => 'required',
-            'accesories' => 'required'
+            'accesories' => 'required',
+            'photo' => 'image|max:1024',
         ]);
 
         EquipmentItem::updateOrCreate(['id' => $this->equiment_id], [
             'controlnumber' => $this->controlnumber,
-            'category' => $this->category,
+            'categoryname' => $this->category,
             'brand' => $this->brand,
             'model' => $this->model,
             'location' => $this->location,
@@ -78,6 +82,7 @@ class Equipment extends Component
             'yearofpurchase' => $this->yearofpurchase,
             'remarks' => $this->remarks,
             'accesories' => $this->accesories,
+            'image' => $this->photo->store('photos'),
         ]);
 
         session()->flash(
@@ -85,7 +90,7 @@ class Equipment extends Component
             $this->equiment_id ? 'Equipment Updated Successfully' : 'Equipment Created Successfully'
         );
 
-        $this->closeModel();
+        $this->closeModal();
         $this->resetInputFields();
     }
 

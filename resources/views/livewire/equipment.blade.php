@@ -27,9 +27,9 @@
                     </div>
                     <div class="col-md-1">
                         <button wire:click="create()" class="btn btn-success border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm block mt-1 w-full mt-2">Add Product</button>
-                        {{-- @if($isOpen)
-                            @include('livewire.create-product')
-                        @endif --}}
+                        @if($isOpen)
+                            @include('livewire.create-equipment')
+                        @endif
                     </div>
                 </div>
             </div>
@@ -86,7 +86,7 @@
             </div>
             <div class="card-footer">
 
-                {{-- {{$products->links()}} --}}
+                {{$equipments->links()}}
             </div>
         </div>
     </div>
@@ -113,28 +113,27 @@
 </div>
 
 <script>
+    window.addEventListener('closeModal', event => {
+        $("#modalForm").modal('hide');
+    })
+    window.addEventListener('openModal', event => {
+        $("#modalForm").modal('show');
+    })
+    window.addEventListener('openDeleteModal', event => {
+        $("#modalFormDelete").modal('show');
+    })
+    window.addEventListener('closeDeleteModal', event => {
+        $("#modalFormDelete").modal('hide');
+    })
+    // Opens the show photos modal
+    window.addEventListener('openModalShowPhotos', event => {
+        $("#modalShowPhotos").modal('show');
+    })
 
-    // window.addEventListener('closeModal', event => {
-    //     $("#modalForm").modal('hide');
-    // })
-    // window.addEventListener('openModal', event => {
-    //     $("#modalForm").modal('show');
-    // })
-    // window.addEventListener('openDeleteModal', event => {
-    //     $("#modalFormDelete").modal('show');
-    // })
-    // window.addEventListener('closeDeleteModal', event => {
-    //     $("#modalFormDelete").modal('hide');
-    // })
-    // // Opens the show photos modal
-    // window.addEventListener('openModalShowPhotos', event => {
-    //     $("#modalShowPhotos").modal('show');
-    // })
-
-    // $(document).ready(function(){
-    //     // This event is triggered when the modal is hidden
-    //     $("#modalForm").on('hidden.bs.modal', function(){
-    //         livewire.emit('forcedCloseModal');
-    //     });
-    // });
+    $(document).ready(function(){
+        // This event is triggered when the modal is hidden
+        $("#modalForm").on('hidden.bs.modal', function(){
+            livewire.emit('forcedCloseModal');
+        });
+    });
 </script>
