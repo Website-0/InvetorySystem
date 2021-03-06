@@ -99,16 +99,17 @@ class Equipment extends Component
     public function edit($id)
     {
         $equipment = EquipmentItem::findOrFail($id);
-        $this->category = $equipment->category;
+        $this->controlnumber = $equipment->controlnumber;
+        $this->category = $equipment->categoryname;
         $this->brand = $equipment->brand;
         $this->model = $equipment->model;
         $this->location = $equipment->location;
         $this->purchaseprice = $equipment->purchaseprice;
-        $this->yearofpurchase = $equipment->yearofpurchase;
+        $this->yearofpurchase = $equipment->yearofpurchase->format('Y-m-d');
         $this->remarks = $equipment->remarks;
         $this->accesories = $equipment->accesories;
 
-        $this->openModal();
+        $this->openModel();
     }
 
     public function delete($id)

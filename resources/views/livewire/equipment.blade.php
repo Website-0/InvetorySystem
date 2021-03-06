@@ -68,11 +68,11 @@
                                     <td>{{$equipment->location}}</td>
                                     <td>{{$equipment->purchaseprice}}</td>
                                     <td>{{$equipment->yearofpurchase->format('Y-m-d')}}</td>
-                                    <td>{{$equipment->retiredate->format('Y-m-d')}}</td>
+                                    <td>{{$equipment->retiredate}}</td>
                                     <td>{{$equipment->remarks}}</td>
                                     <td>{{$equipment->accesories}}</td>
                                     <td classs=" px-4 py-2 w-full">
-                                        <a href="#" class="btn btn-success border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"><i class="fas fa-edit"></i></a>
+                                        <button wire:click="edit({{ $equipment->id }}, 'update')" class="btn btn-success border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"><i class="fas fa-edit"></i></button>
                                         <button wire:click="delete({{ $equipment->id }})" class="btn btn-danger border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"><i class="fas fa-trash-alt"></i></button>
                                     </td>
                                 </tr>
