@@ -58,7 +58,7 @@
                             @foreach ($equipments as $equipment)
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
-                                    <td>
+                                    <td class="d-flex justify-content-center">
                                         <img src="storage/{{$equipment->image}}" width="100" height="100">
                                     </td>
                                     <td>{{$equipment->controlnumber}}</td>
@@ -67,8 +67,8 @@
                                     <td>{{$equipment->model}}</td>
                                     <td>{{$equipment->location}}</td>
                                     <td>{{$equipment->purchaseprice}}</td>
-                                    <td>{{$equipment->yearofpurchase}}</td>
-                                    <td>{{$equipment->retiredate}}</td>
+                                    <td>{{$equipment->yearofpurchase->format('Y-m-d')}}</td>
+                                    <td>{{$equipment->retiredate->format('Y-m-d')}}</td>
                                     <td>{{$equipment->remarks}}</td>
                                     <td>{{$equipment->accesories}}</td>
                                     <td classs=" px-4 py-2 w-full">
