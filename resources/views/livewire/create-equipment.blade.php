@@ -12,8 +12,15 @@
             role="dialog" aria-modal="true" aria-labelledby="modal-headline">
             <form>
                 <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                    <div class="">
-                        <div class="mb-4">
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFile" wire:model="photo">
+                                <label class="custom-file-label" for="customFile">Choose file</label>
+                            </div>
+                            @error('photo') <span class="error">{{ $message }}</span> @enderror
+                        </div>
+                        <div class="col-md-6 form-group">
                             <label for="exampleFormControlInput1"
                                 class="block text-gray-700 text-sm font-bold mb-2">Control Number:</label>
                             <input type="number"
@@ -21,7 +28,7 @@
                                 id="exampleFormControlInput1" placeholder="Enter Control Number" wire:model="controlnumber">
                             @error('controlnumber') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
-                        <div class="mb-4">
+                        <div class="col-md-6 form-group">
                             <label for="exampleFormControlInput1"
                                 class="block text-gray-700 text-sm font-bold mb-2">Category:</label>
                             <input type="text"
@@ -29,7 +36,7 @@
                                 id="exampleFormControlInput1" placeholder="Enter Lastname" wire:model="category">
                             @error('category') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
-                        <div class="mb-4">
+                        <div class="col-md-6 form-group">
                             <label for="exampleFormControlInput1"
                                 class="block text-gray-700 text-sm font-bold mb-2">Brand:</label>
                             <input type="text"
@@ -37,7 +44,7 @@
                                 id="exampleFormControlInput1" placeholder="Enter Lastname" wire:model="brand">
                             @error('brand') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
-                        <div class="mb-4">
+                        <div class="col-md-6 form-group">
                             <label for="exampleFormControlInput1"
                                 class="block text-gray-700 text-sm font-bold mb-2">Model:</label>
                             <input type="text"
@@ -45,7 +52,7 @@
                                 id="exampleFormControlInput1" placeholder="Enter Lastname" wire:model="model">
                             @error('model') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
-                        <div class="mb-4">
+                        <div class="col-md-6 form-group">
                             <label for="exampleFormControlInput1"
                                 class="block text-gray-700 text-sm font-bold mb-2">Location:</label>
                             <input type="text"
@@ -53,7 +60,7 @@
                                 id="exampleFormControlInput1" placeholder="Enter Lastname" wire:model="location">
                             @error('location') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
-                        <div class="mb-4">
+                        <div class="col-md-6 form-group">
                             <label for="exampleFormControlInput1"
                                 class="block text-gray-700 text-sm font-bold mb-2">Purchase Price:</label>
                             <input type="number"
@@ -61,7 +68,7 @@
                                 id="exampleFormControlInput1" placeholder="Enter Lastname" wire:model="purchaseprice">
                             @error('purchaseprice') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
-                        <div class="mb-4">
+                        <div class="col-md-6 form-group">
                             <label for="exampleFormControlInput1"
                                 class="block text-gray-700 text-sm font-bold mb-2">Year Of Purchase:</label>
                             <input type="date"
@@ -69,7 +76,7 @@
                                 id="exampleFormControlInput1" placeholder="Enter Lastname" wire:model="yearofpurchase">
                             @error('yearofpurchase') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
-                        <div class="mb-4">
+                        <div class="col-md-6 form-group">
                             <label for="exampleFormControlInput1"
                                 class="block text-gray-700 text-sm font-bold mb-2">Remarks:</label>
                             <input type="text"
@@ -77,19 +84,13 @@
                                 id="exampleFormControlInput1" placeholder="Enter Lastname" wire:model="remarks">
                             @error('remarks') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
-                        <div class="mb-4">
+                        <div class="col-md-12 form-group">
                             <label for="exampleFormControlInput1"
                                 class="block text-gray-700 text-sm font-bold mb-2">Accesories:</label>
                             <input type="text"
                                 class="@error('accesories') is-invalid @enderror form-control w-full mt-1 block  rounded-md focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                 id="exampleFormControlInput1" placeholder="Enter Lastname" wire:model="accesories">
                             @error('accesories') <span class="text-red-500">{{ $message }}</span>@enderror
-                        </div>
-                        <div class="mb-4">
-                            <input type="file" wire:model="photo">
-
-                            @error('photo') <span class="error">{{ $message }}</span> @enderror
-
                         </div>
                     </div>
                 </div>
