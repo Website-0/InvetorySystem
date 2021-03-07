@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BorrowedController;
 use App\Http\Controllers\EquipmentsController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,8 @@ Route::get('/', function () {
 });
 
 Route::resource('/equipment', EquipmentsController::class);
+
+Route::resource('/borrowed', BorrowedController::class);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
