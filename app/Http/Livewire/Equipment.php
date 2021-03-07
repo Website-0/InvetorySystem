@@ -16,7 +16,7 @@ class Equipment extends Component
     public $orderBy = 'controlnumber';
     public $orderAsc = true;
     public $isOpen = 0;
-    public $controlnumber, $category, $photo, $brand, $model, $location, $purchaseprice, $yearofpurchase, $retiredate, $remarks, $accesories, $equiment_id;
+    public $controlnumber, $name, $category, $photo, $brand, $model, $location, $purchaseprice, $yearofpurchase, $retiredate, $remarks, $accesories, $equiment_id;
 
     public function render()
     {
@@ -45,6 +45,7 @@ class Equipment extends Component
 
     private function resetInputFields()
     {
+        $this->name = '';
         $this->controlnumber = '';
         $this->category = '';
         $this->brand = '';
@@ -60,6 +61,7 @@ class Equipment extends Component
     public function store()
     {
         $this->validate([
+            'name' => 'required',
             'controlnumber' => 'required',
             'category' => 'required',
             'brand' => 'required',
@@ -74,6 +76,7 @@ class Equipment extends Component
 
 
         EquipmentItem::updateOrCreate(['id' => $this->equiment_id], [
+            'name' => $this->name,
             'controlnumber' => $this->controlnumber,
             'categoryname' => $this->category,
             'brand' => $this->brand,
@@ -99,6 +102,7 @@ class Equipment extends Component
     public function edit($id)
     {
         $equipment = EquipmentItem::findOrFail($id);
+        $this->name = $equipment->name;
         $this->controlnumber = $equipment->controlnumber;
         $this->category = $equipment->categoryname;
         $this->brand = $equipment->brand;

@@ -15,6 +15,7 @@ class CreateEquipmentItemsTable extends Migration
     {
         Schema::create('equipment_items', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
             $table->integer('controlnumber');
             $table->string('categoryname');
             $table->string('brand');

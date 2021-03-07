@@ -50,7 +50,7 @@
                             <select class="@error('equipment_item_id') is-invalid @enderror form-control w-full mt-1 block  rounded-md focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="sel1" wire:model="equipment_item_id">
                                 <option>Select </option>
                                 @foreach ($equipments as $equipment)
-                                <option value="{{$equipment->id}}">{{$equipment->controlnumber}}</option>
+                                <option value="{{$equipment->id}}">{{$equipment->name}}</option>
                                 @endforeach
                             </select>
                             @error('equipment_item_id') <span class="text-red-500">{{ $message }}</span>@enderror

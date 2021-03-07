@@ -13,6 +13,7 @@ class EquipmentItem extends Model
 
     protected $fillable = [
         'controlnumber',
+        'name',
         'categoryname',
         'brand',
         'model',
@@ -43,6 +44,7 @@ class EquipmentItem extends Model
     {
         return empty($search) ? static::query()
             : static::query()->where('id', 'like', '%' . $search . '%')
+            ->orWhere('name', 'like', '%' . $search . '%')
             ->orWhere('controlnumber', 'like', '%' . $search . '%')
             ->orWhere('categoryname', 'like', '%' . $search . '%')
             ->orWhere('brand', 'like', '%' . $search . '%')

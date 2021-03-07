@@ -39,6 +39,7 @@
                         <tr>
                             <th scope="col" class="border-0">#</th>
                             <th scope="col" class="border-0">Image</th>
+                            <th scope="col" class="border-0">Name</th>
                             <th scope="col" class="border-0">Control Number</th>
                             <th scope="col" class="border-0">Category</th>
                             <th scope="col" class="border-0">Brand</th>
@@ -61,6 +62,7 @@
                                     <td class="d-flex justify-content-center">
                                         <img src="storage/{{$equipment->image}}" width="100" height="100">
                                     </td>
+                                    <td>{{$equipment->name}}</td>
                                     <td>{{$equipment->controlnumber}}</td>
                                     <td>{{$equipment->categoryname}}</td>
                                     <td>{{$equipment->brand}}</td>
