@@ -17,7 +17,7 @@ class CreateBorrowedsTable extends Migration
             $table->bigIncrements('id');
             $table->string('event');
             $table->string('eventplace');
-            $table->string('eventdate');
+            $table->date('eventdate');
             $table->string('borrowersname');
             $table->unsignedBigInteger('equipment_item_id');
 

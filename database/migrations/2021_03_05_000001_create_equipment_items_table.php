@@ -22,7 +22,7 @@ class CreateEquipmentItemsTable extends Migration
             $table->string('location');
             $table->integer('purchaseprice');
             $table->date('yearofpurchase');
-            $table->date('retiredate');
+            $table->date('retiredate')->nullable();
             $table->string('remarks');
             $table->string('accesories');
             $table->string('image')->nullable();

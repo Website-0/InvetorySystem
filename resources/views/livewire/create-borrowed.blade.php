@@ -13,84 +13,47 @@
             <form>
                 <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <div class="row">
-                        <div class="col-md-12 form-group">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile" wire:model="photo">
-                                <label class="custom-file-label" for="customFile">Choose file</label>
-                            </div>
-                            @error('photo') <span class="error">{{ $message }}</span> @enderror
-                        </div>
                         <div class="col-md-6 form-group">
                             <label for="exampleFormControlInput1"
-                                class="block text-gray-700 text-sm font-bold mb-2">Control Number:</label>
-                            <input type="number"
-                                class="@error('controlnumber') is-invalid @enderror form-control w-full mt-1 block  rounded-md focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                id="exampleFormControlInput1" placeholder="Enter Control Number" wire:model="controlnumber">
-                            @error('controlnumber') <span class="text-red-500">{{ $message }}</span>@enderror
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label for="exampleFormControlInput1"
-                                class="block text-gray-700 text-sm font-bold mb-2">Category:</label>
+                                class="block text-gray-700 text-sm font-bold mb-2">Name Of Borrower:</label>
                             <input type="text"
-                                class="@error('category') is-invalid @enderror form-control w-full mt-1 block  rounded-md focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                id="exampleFormControlInput1" placeholder="Enter Lastname" wire:model="category">
-                            @error('category') <span class="text-red-500">{{ $message }}</span>@enderror
+                                class="@error('borrowersname') is-invalid @enderror form-control w-full mt-1 block  rounded-md focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                id="exampleFormControlInput1" placeholder="Enter Name of Borrower" wire:model="borrowersname">
+                            @error('borrowersname') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
                         <div class="col-md-6 form-group">
                             <label for="exampleFormControlInput1"
-                                class="block text-gray-700 text-sm font-bold mb-2">Brand:</label>
+                                class="block text-gray-700 text-sm font-bold mb-2">Event:</label>
                             <input type="text"
-                                class="@error('brand') is-invalid @enderror form-control w-full mt-1 block  rounded-md focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                id="exampleFormControlInput1" placeholder="Enter Lastname" wire:model="brand">
-                            @error('brand') <span class="text-red-500">{{ $message }}</span>@enderror
+                                class="@error('event') is-invalid @enderror form-control w-full mt-1 block  rounded-md focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                id="exampleFormControlInput1" placeholder="Enter Lastname" wire:model="event">
+                            @error('event') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
                         <div class="col-md-6 form-group">
                             <label for="exampleFormControlInput1"
-                                class="block text-gray-700 text-sm font-bold mb-2">Model:</label>
+                                class="block text-gray-700 text-sm font-bold mb-2">Event Place:</label>
                             <input type="text"
-                                class="@error('model') is-invalid @enderror form-control w-full mt-1 block  rounded-md focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                id="exampleFormControlInput1" placeholder="Enter Lastname" wire:model="model">
-                            @error('model') <span class="text-red-500">{{ $message }}</span>@enderror
+                                class="@error('eventplace') is-invalid @enderror form-control w-full mt-1 block  rounded-md focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                id="exampleFormControlInput1" placeholder="Enter Lastname" wire:model="eventplace">
+                            @error('eventplace') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
                         <div class="col-md-6 form-group">
                             <label for="exampleFormControlInput1"
-                                class="block text-gray-700 text-sm font-bold mb-2">Location:</label>
-                            <input type="text"
-                                class="@error('location') is-invalid @enderror form-control w-full mt-1 block  rounded-md focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                id="exampleFormControlInput1" placeholder="Enter Lastname" wire:model="location">
-                            @error('location') <span class="text-red-500">{{ $message }}</span>@enderror
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label for="exampleFormControlInput1"
-                                class="block text-gray-700 text-sm font-bold mb-2">Purchase Price:</label>
-                            <input type="number"
-                                class="@error('purchaseprice') is-invalid @enderror form-control w-full mt-1 block  rounded-md focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                id="exampleFormControlInput1" placeholder="Enter Lastname" wire:model="purchaseprice">
-                            @error('purchaseprice') <span class="text-red-500">{{ $message }}</span>@enderror
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label for="exampleFormControlInput1"
-                                class="block text-gray-700 text-sm font-bold mb-2">Year Of Purchase:</label>
+                                class="block text-gray-700 text-sm font-bold mb-2">Event Date:</label>
                             <input type="date"
-                                class="@error('yearofpurchase') is-invalid @enderror form-control w-full mt-1 block  rounded-md focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                id="exampleFormControlInput1" placeholder="Enter Lastname" wire:model="yearofpurchase">
-                            @error('yearofpurchase') <span class="text-red-500">{{ $message }}</span>@enderror
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label for="exampleFormControlInput1"
-                                class="block text-gray-700 text-sm font-bold mb-2">Remarks:</label>
-                            <input type="text"
-                                class="@error('remarks') is-invalid @enderror form-control w-full mt-1 block  rounded-md focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                id="exampleFormControlInput1" placeholder="Enter Lastname" wire:model="remarks">
-                            @error('remarks') <span class="text-red-500">{{ $message }}</span>@enderror
+                                class="@error('eventdate') is-invalid @enderror form-control w-full mt-1 block  rounded-md focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                id="exampleFormControlInput1" placeholder="Enter Lastname" wire:model="eventdate">
+                            @error('eventdate') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
                         <div class="col-md-12 form-group">
-                            <label for="exampleFormControlInput1"
-                                class="block text-gray-700 text-sm font-bold mb-2">Accesories:</label>
-                            <input type="text"
-                                class="@error('accesories') is-invalid @enderror form-control w-full mt-1 block  rounded-md focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                id="exampleFormControlInput1" placeholder="Enter Lastname" wire:model="accesories">
-                            @error('accesories') <span class="text-red-500">{{ $message }}</span>@enderror
+                            <label for="exampleFormControlInput1" class="block text-gray-700 text-sm font-bold mb-2">Equipment Borrowed:</label>
+                            <select class="@error('equipment_item_id') is-invalid @enderror form-control w-full mt-1 block  rounded-md focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="sel1" wire:model="equipment_item_id">
+                                <option>Select </option>
+                                @foreach ($equipments as $equipment)
+                                <option value="{{$equipment->id}}">{{$equipment->controlnumber}}</option>
+                                @endforeach
+                            </select>
+                            @error('equipment_item_id') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
                     </div>
                 </div>

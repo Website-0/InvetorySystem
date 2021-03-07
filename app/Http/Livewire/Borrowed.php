@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Borrowed as ModelsBorrowed;
+use App\Models\EquipmentItem;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Livewire\WithFileUploads;
@@ -16,10 +17,11 @@ class Borrowed extends Component
     public $orderBy = 'id';
     public $orderAsc = true;
     public $isOpen = 0;
-    public $borrowed_id, $event, $eventplace, $eventdate, $borrowersname;
+    public $borrowed_id, $event, $eventplace, $eventdate, $borrowersname, $equipment_item_id;
     public function render()
     {
         return view('livewire.borrowed', [
+            'equipments' => EquipmentItem::all(),
             'borroweds' => ModelsBorrowed::search($this->search)
                 ->orderBy($this->orderBy, $this->orderAsc ? 'asc' : 'desc')
                 ->paginate(15),
@@ -82,11 +84,12 @@ class Borrowed extends Component
 
     public function edit($id)
     {
-        $equipment = ModelsBorrowed::findOrFail($id);
-        $this->event = $equipment->event;
-        $this->eventplace = $equipment->eventplace;
-        $this->eventdate = $equipment->eventdate;
-        $this->borrowersname = $equipment->borrowersname;
+        $borrowed = ModelsBorrowed::findOrFail($id);
+        $this->event = $borrowed->event;
+        $this->eventplace = $borrowed->eventplace;
+        $this->eventdate = $borrowed->eventdate;
+        $this->borrowersname = $borrowed->borrowersname;
+        $this->equipment_item_id = $borrowed->equipment_item_id;
 
         $this->openModel();
     }
