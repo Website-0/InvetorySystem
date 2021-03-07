@@ -15,6 +15,10 @@ class CreateBorrowedsTable extends Migration
     {
         Schema::create('borroweds', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('event');
+            $table->string('eventplace');
+            $table->string('eventdate');
+            $table->string('borrowersname');
             $table->unsignedBigInteger('equipment_item_id');
 
             $table->timestamps();
