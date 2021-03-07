@@ -21,7 +21,7 @@ class Borrowed extends Component
     {
         return view('livewire.borrowed', [
             'borroweds' => ModelsBorrowed::search($this->search)
-                ->orderbBy($this->orderBy, $this->orderAsc ? 'asc' : 'desc')
+                ->orderBy($this->orderBy, $this->orderAsc ? 'asc' : 'desc')
                 ->paginate(15),
         ]);
     }
