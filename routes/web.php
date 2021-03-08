@@ -21,6 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/PDF', [PDFController::class, 'show']);
+
 Route::resource('/equipment', EquipmentsController::class);
 
 Route::resource('/borrowed', BorrowedController::class);
