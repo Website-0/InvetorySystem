@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BorrowedController;
 use App\Http\Controllers\EquipmentsController;
+use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('invoice', function () {
-    return view('invoices::templates.default');
-});
+Route::get('/PDF', [PDFController::class, 'show']);
 
 Route::resource('/equipment', EquipmentsController::class);
 
