@@ -19,6 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('invoice', function () {
+    return view('invoices::templates.default');
+});
+
 Route::resource('/equipment', EquipmentsController::class);
 
 Route::resource('/borrowed', BorrowedController::class);

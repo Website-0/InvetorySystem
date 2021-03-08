@@ -56,7 +56,7 @@
                                     <td>{{$borrowed->event}}</td>
                                     <td>{{$borrowed->eventplace}}</td>
                                     <td>{{$borrowed->eventdate}}</td>
-                                    <td>{{$borrowed->EquipmentItem->name}}</td>
+                                    <td>{{$borrowed->equipment_item_id}}</td>
                                     <td classs=" px-4 py-2 w-full">
                                         <button wire:click="edit({{ $borrowed->id }}, 'update')" class="btn btn-success border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"><i class="fas fa-edit"></i></button>
                                         <button wire:click="delete({{ $borrowed->id }})" class="btn btn-danger border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"><i class="fas fa-trash-alt"></i></button>

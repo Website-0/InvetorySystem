@@ -20,14 +20,6 @@
                             </div>
                             @error('photo') <span class="error">{{ $message }}</span> @enderror
                         </div>
-                        <div class="col-md-12 form-group">
-                            <label for="exampleFormControlInput1"
-                                class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
-                            <input type="text"
-                                class="@error('name') is-invalid @enderror form-control w-full mt-1 block  rounded-md focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                id="exampleFormControlInput1" placeholder="Enter Control Number" wire:model="name">
-                            @error('name') <span class="text-red-500">{{ $message }}</span>@enderror
-                        </div>
                         <div class="col-md-6 form-group">
                             <label for="exampleFormControlInput1"
                                 class="block text-gray-700 text-sm font-bold mb-2">Control Number:</label>
