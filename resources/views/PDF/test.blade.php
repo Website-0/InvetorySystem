@@ -25,7 +25,8 @@
       </center>
        <table class="table table-sm">
           <thead>
-            <tr>
+            <tr class="text-center">
+              <th>#</th>
               <th>Borrower's Name</th>
               <th>Event</th>
               <th>Event Place</th>
@@ -36,6 +37,7 @@
           <tbody>
               @foreach ($borroweds as $borrowed)
                 <tr>
+                    <td>{{$loop->iteration}}</td>
                     <td>{{$borrowed->borrowersname}}</td>
                     <td>{{$borrowed->event}}</td>
                     <td>{{$borrowed->eventplace}}</td>
