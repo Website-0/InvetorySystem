@@ -18,7 +18,7 @@
                                 <input type="file" class="custom-file-input" id="customFile" wire:model="photo">
                                 <label class="custom-file-label" for="customFile">Choose file</label>
                             </div>
-                            @error('photo') <span class="error">{{ $message }}</span> @enderror
+                            @error('photo') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
                         <div class="col-md-12 form-group">
                             <label for="exampleFormControlInput1"

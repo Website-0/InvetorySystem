@@ -71,7 +71,7 @@ class Equipment extends Component
             'yearofpurchase' => 'required',
             'remarks' => 'required',
             'accesories' => 'required',
-            'photo' => 'image|max:1024',
+            'photo' => 'required|image|max:1024',
         ]);
 
 
