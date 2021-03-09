@@ -8,10 +8,11 @@ use PDF;
 
 class PDFController extends Controller
 {
+
     public function PDF()
     {
-        $borroweds = Borrowed::all();
-
+        $id = 'borrowersname';
+        $borroweds = Borrowed::where($id, 'Possimus architecto cum aliquid mollitia nihil deserunt.')->get();
         $pdf = PDF::loadView('PDF.test', compact('borroweds'))->setPaper('letter', 'portrait');
         return $pdf->stream();
     }

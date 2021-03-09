@@ -26,6 +26,7 @@
                         </select>
                     </div>
                     <div class="col-md-1">
+                        <button wire:click="ViewPDF()" class="btn btn-success border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm block mt-1 w-full mt-2">Add Product</button>
                         <button wire:click="create()" class="btn btn-success border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm block mt-1 w-full mt-2">Add Product</button>
                         @if($isOpen)
                             @include('livewire.create-borrowed')
@@ -58,6 +59,7 @@
                                     <td>{{$borrowed->eventdate}}</td>
                                     <td>{{$borrowed->EquipmentItem->name}}</td>
                                     <td classs=" px-4 py-2 w-full">
+
                                         <button wire:click="edit({{ $borrowed->id }}, 'update')" class="btn btn-success border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"><i class="fas fa-edit"></i></button>
                                         <button wire:click="delete({{ $borrowed->id }})" class="btn btn-danger border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"><i class="fas fa-trash-alt"></i></button>
                                     </td>

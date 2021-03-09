@@ -15,17 +15,18 @@
             font-size: 14px;
             font-family: Helvetica, sans-serif;
         }
+
     </style>
 </head>
   <body>
       <center>
-        <h2>Borderless Table</h2>
+        <h2>Borrower's List</h2>
         <p>The .table-borderless class removes borders from the table:</p>
 
       </center>
        <table class="table table-sm">
           <thead>
-            <tr class="text-center">
+            <tr>
               <th>#</th>
               <th>Borrower's Name</th>
               <th>Event</th>
