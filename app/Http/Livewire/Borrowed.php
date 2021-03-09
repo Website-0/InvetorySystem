@@ -34,7 +34,7 @@ class Borrowed extends Component
         $data = [
             'borroweds' => ModelsBorrowed::search($this->search)->get()
         ];
-        $pdfContent = PDF::loadView('PDF.test', $data)->output();
+        $pdfContent = PDF::loadView('PDF.borrowed', $data)->output();
         return response()->streamDownload(
             fn () => print($pdfContent),
             "filename.pdf"

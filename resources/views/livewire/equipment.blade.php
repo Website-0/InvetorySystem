@@ -27,6 +27,7 @@
                     </div>
                     <div class="col-md-1">
                         <button wire:click="create()" class="btn btn-success border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm block mt-1 w-full mt-2">Add Product</button>
+                        <button wire:click="ViewPDF()" class="btn btn-success border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm block mt-1 w-full mt-2">Download</button>
                         @if($isOpen)
                             @include('livewire.create-equipment')
                         @endif
