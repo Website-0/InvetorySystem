@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BorrowedController;
 use App\Http\Controllers\EquipmentsController;
+use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,8 @@ Route::get('/', function () {
 Route::resource('/equipment', EquipmentsController::class);
 
 Route::resource('/borrowed', BorrowedController::class);
+
+Route::get('/PDF', [PDFController::class, 'PDF']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
