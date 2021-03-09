@@ -6,6 +6,7 @@ use App\Models\EquipmentItem;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Livewire\WithFileUploads;
+use PDF;
 
 class Equipment extends Component
 {
@@ -25,6 +26,19 @@ class Equipment extends Component
                 ->orderBy($this->orderBy, $this->orderAsc ? 'asc' : 'desc')
                 ->paginate(15),
         ]);
+    }
+
+    public function ViewPDF()
+    {
+        $data = [
+            'equipments' => EquipmentItem::search($this->search)->get()
+        ];
+
+        $pdfContent = PDF::loadView('PDF.equipment', $data)->setPaper('letter', 'landscape')->output();
+        return response()->streamDownload(
+            fn () => print($pdfContent),
+            "filename.pdf"
+        );
     }
 
     public function create()
