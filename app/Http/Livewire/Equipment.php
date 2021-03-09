@@ -27,6 +27,17 @@ class Equipment extends Component
         ]);
     }
 
+    public function ViewPDF()
+    {
+        $data = [
+            'equipments' => EquipmentItem::search($this->search)->get()
+        ];
+        $pdfContent = PDF::loadView('PDF.test', $data)->output();
+        return response()->streamDownload(
+            fn () => print($pdfContent),
+            "filename.pdf"
+        );
+    }
     public function create()
     {
         $this->resetInputFields();
