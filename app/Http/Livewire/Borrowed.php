@@ -32,7 +32,7 @@ class Borrowed extends Component
     public function ViewPDF()
     {
         $data = [
-            'borroweds' =>  ModelsBorrowed::where('borrowersname', 'Veritatis minus voluptas.')->get()
+            'borroweds' => ModelsBorrowed::search($this->search)->get()
         ];
         $pdfContent = PDF::loadView('PDF.test', $data)->output();
         return response()->streamDownload(
